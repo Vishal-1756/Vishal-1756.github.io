@@ -471,6 +471,12 @@
 
     <script>
         
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingScreen = document.querySelector('.loading-screen');
+            loadingScreen.style.display = 'flex';
+        });
+
+        // Hide loading screen when everything is loaded
         window.addEventListener('load', () => {
             const loadingScreen = document.querySelector('.loading-screen');
             setTimeout(() => {
@@ -478,8 +484,9 @@
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
                 }, 500);
-            }, 3000);
+            }, 1000); // Reduced delay to 1 second for better user experience
         });
+
 
         
         const mobileMenu = document.querySelector('.mobile-menu');
